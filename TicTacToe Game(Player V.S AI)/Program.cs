@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 class TicTacToe
 {
@@ -13,5 +14,43 @@ class TicTacToe
     static void Main()
     {
         Console.WriteLine("Welcome to a game of Tic-Tac-Toe!");
+        PrintBoard();
+
+        while (true) 
+        {
+            PlayerMove();
+            PrintBoard();
+
+            if(CheckWinner(playerSymbol))
+            {
+                Console.WriteLine("Player Wins!");
+                break;
+            }
+
+            if(IsBoardFull())
+            {
+                Console.WriteLine("It's a tie!");
+                break;
+            }
+
+            CPUMove();
+            Console.WriteLine("CPU's move:");
+            PrintBoard();
+
+            if (CheckWinner(cpuSymbol))
+            {
+                Console.WriteLine("CPU's Wins!:");
+                break;
+            }
+
+            {
+                if(IsBoardFull())
+                {
+                    Console.WriteLine("It's a Tie");
+                    break;
+                }
+            }
+
+        }
     }
 };
