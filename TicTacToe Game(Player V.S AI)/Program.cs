@@ -95,5 +95,43 @@ class TicTacToe
         }
         return true;
     }
+       static void PleyerMove()
+    {
+        int position;
+        while (true) 
+        {
+            Console.WriteLine("Player's turn - Enter position( 1 -9):");
+            if(int.TryParse(Console.ReadLine(), out position) && position >=1 && position <= 9) 
+            {
+                int row = (position - 1) / 3;
+                int col = (position - 1) / 3;
+
+                if (board[row, col] == '_')
+                {
+                    if (board[row , col] == '_')
+                    {
+                        board[row, col] = playerSymbol;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid move. The position is already taken. Try again");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a number between 1 and 9.");
+                }
+            }
+        
+            static void CPUMove()
+            {
+
+            }
+        {
+            
+        }
     }
-};
+    }
+}
+
