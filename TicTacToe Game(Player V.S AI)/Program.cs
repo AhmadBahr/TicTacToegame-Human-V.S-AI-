@@ -20,6 +20,7 @@ class TicTacToe
         {
             PlayerMove();
             PrintBoard();
+            Clear.Console();
 
             if (CheckWinner(playerSymbol))
             {
